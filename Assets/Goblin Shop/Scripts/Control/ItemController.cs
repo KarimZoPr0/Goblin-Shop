@@ -53,7 +53,6 @@ namespace GSS.Control
                 if (genericItem.itemType == itemType)
                 {
                     genericItem.item = items[randomWeapon];
-                    genericItem.objectSettings.Id = genericItem.gameObject.name;
                     genericItem.LoadData();
                     //genericItem.gameObject.GetComponent<RectTransform>().anchoredPosition = genericItem.objectSettings.homeTransform.anchoredPosition;
                     // if we have same id name then we add the id name + a number that increases by 1 

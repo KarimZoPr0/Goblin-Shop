@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3969871589022800105}
   - component: {fileID: 3969871589022800106}
   - component: {fileID: 3969871589022800107}
-  - component: {fileID: 3969871589022800104}
+  - component: {fileID: 6778282721986543022}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -75,7 +76,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3969871589022800104
+--- !u!114 &6778282721986543022
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,18 +85,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3969871589022800110}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca20eea2141976447aaccd6f3c331433, type: 3}
+  m_Script: {fileID: 11500000, guid: 8baa96203e8edaa409b673170ba06ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
-  counterId: 
-  ObjectPosition: 0
-  LockObject: 0
-  ObjectReplacement: 1
-  itemController: {fileID: 0}
-  OnObjectDropped:
-    m_PersistentCalls:
-      m_Calls: []
-  PanelIdManager: []
-  isCheckout: 0
-  curItem: {fileID: 0}

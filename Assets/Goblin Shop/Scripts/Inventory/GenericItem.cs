@@ -23,7 +23,7 @@ namespace GSS.Inventory
     {
         [Header("Stats Settings")]
 
-        public static GenericItem NOTHING;
+        public static GenericItem Nothing;
         public string id;
         public int atk;
         public int def;
@@ -35,7 +35,6 @@ namespace GSS.Inventory
         [Header("Item Settings")]
         public ItemType itemType;
         public Item item;
-        public ObjectSettings objectSettings;
         public ItemController itemController;
         public bool inCounter = false;
         
@@ -59,12 +58,12 @@ namespace GSS.Inventory
             var character = CharacterGenerator.instance.GetSelected();
             if (!character.equipableItems.Contains(item))
             {
-                objectSettings.enabled = false;
+                //objectSettings.enabled = false;
                 Reference.ui.crosshair.ChangeCrosshair("Illegal");
             }
             else
             {
-                objectSettings.enabled = true;
+                //objectSettings.enabled = true;
                 Reference.ui.crosshair.ChangeCrosshair("Select");
             }
         }
