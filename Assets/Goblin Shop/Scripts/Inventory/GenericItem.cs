@@ -5,6 +5,7 @@ using GSS.com;
 using GSS.Combat;
 using GSS.Control;
 using UnityEngine;
+using UnityEngine.Android;
 using UnityEngine.EventSystems;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
@@ -58,11 +59,13 @@ namespace GSS.Inventory
             var character = CharacterGenerator.instance.GetSelected();
             if (!character.equipableItems.Contains(item))
             {
+                // TODO: Fix this
                 //objectSettings.enabled = false;
                 Reference.ui.crosshair.ChangeCrosshair("Illegal");
             }
             else
             {
+                // TODO: Fix this
                 //objectSettings.enabled = true;
                 Reference.ui.crosshair.ChangeCrosshair("Select");
             }

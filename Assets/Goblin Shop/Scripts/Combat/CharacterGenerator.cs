@@ -85,7 +85,7 @@ namespace GSS.Combat
             foreach (var counterItem in itemController.counterItems)
             {
                 GetStats(counterItem);
-                // fixa detta
+                // TODO: Fix THIS
                 //counterItem.gameObject.GetComponent<RectTransform>().anchoredPosition = counterItem.objectSettings.HomePos;//homeTransform.position;//genericItem.objectSettings.HomePos;
                 counterItem.inCounter = false;//DEACTIVATE TO AVOID STACKING 
             }
