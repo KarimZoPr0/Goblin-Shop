@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Items
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: e3d26ac78352c654692aa764feb0cd2f, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 2eb9a031f06278c4ebd990774eadaac3, type: 3}
+  - {fileID: 21300000, guid: 59ce04e645b6a6d40a4f6f39d4d6507f, type: 3}
+  - {fileID: 21300000, guid: 1c7611d7079ddf444a67c2129222e3bf, type: 3}
+  - {fileID: 21300000, guid: cf055ed89432c7e42b198d6875a9281c, type: 3}
+  - {fileID: 21300000, guid: 4f1bbf592cdcaf0478870e9b8c6f5659, type: 3}
+  - {fileID: 21300000, guid: cea42bab9cd18c045bf0844547a6ce4d, type: 3}
+  - {fileID: 21300000, guid: ca6411bb664d2d144a27b248fd0a9177, type: 3}
+  - {fileID: 21300000, guid: dfb43e0c150ebf040b27e53ae2b8ed5d, type: 3}
+  - {fileID: 21300000, guid: d9452a9c2b34e7b4481632436f426b06, type: 3}
+  - {fileID: 21300000, guid: 89ae0e6d1bd434748b35b8ec96abef43, type: 3}
+  - {fileID: 21300000, guid: b38e848ec735bfc44a4fe77f0e7f8629, type: 3}
+  - {fileID: 21300000, guid: bcda4d0fc286f254486d2e5426631018, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - UI_Item_Double_Shield
+  - UI_Item_Single_Mana_Potion
+  - UI_Item_Double_Axe
+  - UI_Item_Double_Sword
+  - UI_Item_Single_Leather_Armor
+  - UI_Item_Single_Old_Cheese
+  - UI_Item_Single_Scroll
+  - UI_Item_Single_Meat
+  - UI_Item_Single_Plate_Armor
+  - UI_Item_Single_Bomb
+  - UI_Item_Single_Quiver
+  - UI_Item_Single_Health_Potion
+  m_RenderDataMap: {}
+  m_Tag: Items
+  m_IsVariant: 0
