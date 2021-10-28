@@ -1,27 +1,35 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
+using GSS.Control;
 
-public class Slot : MonoBehaviour, IDropHandler
+namespace GSS.Inventory
 {
- public GameObject item
- {
-  get
-  {
-   if (transform.childCount > 0)
-   {
-    return transform.GetChild(0).gameObject;
-   }
+	public class Slot : MonoBehaviour, IDropHandler
+	{
 
-   return null;
-  }
- }
+		private GameObject Item => transform.childCount > 0 ? transform.GetChild(0).gameObject : null;
 
- public void OnDrop(PointerEventData eventData)
- {
-  if (!item)
-  {
-   DragHandler.item.transform.SetParent(transform);
-  }
- }
+		public void OnDrop(PointerEventData eventData)
+		{
+			if (Item) return;
+			var droppedItem = eventData.pointerDrag.GetComponent<GenericItem>();
+			var dragHandler = eventData.pointerDrag.GetComponent<DragHandler>();
+
+
+			if (!dragHandler.canDrag) return;
+			DragHandler.Item.transform.SetParent(transform);
+
+			AssignToCounter(droppedItem.itemController, droppedItem);
+		}
+
+		private static void AssignToCounter(ItemController itemController, GenericItem droppedItem)
+		{
+			itemController.counterItems.Add(droppedItem);
+			itemController.gold         += droppedItem.price;
+			itemController.goldTxt.text =  itemController.gold.ToString();
+			droppedItem.inCounter       =  true;
+		}
+	}
 }

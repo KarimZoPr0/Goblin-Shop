@@ -27,7 +27,7 @@ namespace GSS.con
                 if (count > counterItem.buyLimit) return;
                 // counterItem.GetComponent<RectTransform>().position = counterItem.objectSettings.HomePos;
             }
-
+                 itemController.goldTxt.text = itemController.gold.ToString();
             // Calling next character
             characterGenerator.StartCoroutine(characterGenerator.NextCharacter());
         }

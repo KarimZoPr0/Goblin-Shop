@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using GSS.com;
 using GSS.Control;
@@ -36,7 +37,7 @@ namespace GSS.Combat
 
         
         string txt = "";
-        public int id = 0;
+        public int selectedCharactersCount = 0;
         
         
         private void Awake()
@@ -70,31 +71,31 @@ namespace GSS.Combat
             GetList();
             
             if(combatManager.gameState == GameState.DayShopping) 
-                SelectCharacters(combatManager.heroes, combatManager.monsters);
+                SelectCharacters(combatManager.heroes);
             else if(combatManager.gameState == GameState.NightShopping)
-                SelectCharacters(combatManager.monsters, combatManager.heroes);
+                SelectCharacters(combatManager.monsters);
             
         }
 
         // this is calling the next character
         public IEnumerator NextCharacter()
         {
-            id++;
+            selectedCharactersCount++;
             Reference.transitor.Fade();
             yield return new WaitForSeconds(0.5f);
             foreach (var counterItem in itemController.counterItems)
             {
                 GetStats(counterItem);
-                // TODO: Fix THIS
-                //counterItem.gameObject.GetComponent<RectTransform>().anchoredPosition = counterItem.objectSettings.HomePos;//homeTransform.position;//genericItem.objectSettings.HomePos;
-                counterItem.inCounter = false;//DEACTIVATE TO AVOID STACKING 
+                counterItem.GetComponent<Transform>().position = counterItem.transform.position;
+
+                counterItem.inCounter = false;
             }
             itemController.counterItems.Clear();
             
             if(combatManager.gameState == GameState.DayShopping) 
-                SelectCharacters(combatManager.heroes, combatManager.monsters);
+                SelectCharacters(combatManager.heroes);
             else if(combatManager.gameState == GameState.NightShopping)
-                SelectCharacters(combatManager.monsters, combatManager.heroes);
+                SelectCharacters(combatManager.monsters);
         }
 
         private void GetStats(GenericItem genericItem)
@@ -103,6 +104,7 @@ namespace GSS.Combat
             GetSelected().baseDefense += genericItem.def;
             GetSelected().baseHealth += genericItem.hp;
             GetSelected().baseGold -= itemController.gold;
+            
             itemController.gold = 0;
             itemController.goldTxt.text = itemController.gold.ToString();
             
@@ -118,26 +120,19 @@ namespace GSS.Combat
         }
 
 
-        // this is checking if if all character has shopped and getting the characaters
-        public void SelectCharacters(List<Fighter> attackers, List<Fighter> targets)
+        // this is checking if if all character has shopped and getting the character
+        public void SelectCharacters(List<Fighter> attackers)
         {
-            // id of selected character
-            
-            if (id >= attackers.Count)
+            if (selectedCharactersCount >= attackers.Count)
             {
-                id = 0;
+                selectedCharactersCount = 0;
                 if (combatManager.gameState == GameState.DayShopping)
-                {
                     StartCoroutine(day.CombatTransition());
-                }
                 else if (combatManager.gameState == GameState.NightShopping)
-                {
                     StartCoroutine(night.CombatTransition());
-                }
-                
             }
-            CharacterScriptableObject selected = null; // selected character
-            selected = attackers[id].character;
+            
+            var selected = attackers[selectedCharactersCount].character;
 
             characterStats = selected;
             CharacterSprite.sprite = selected.sprite;
@@ -147,10 +142,7 @@ namespace GSS.Combat
         
         
         // this is for getting the current character stats > can be used for items
-        public CharacterScriptableObject GetSelected()
-        {
-            return characterStats;
-        }
+        public CharacterScriptableObject GetSelected() => characterStats;
     }
    
 }
