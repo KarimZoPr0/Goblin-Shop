@@ -86,7 +86,8 @@ namespace GSS.Combat
             foreach (var counterItem in itemController.counterItems)
             {
                 GetStats(counterItem);
-                counterItem.GetComponent<Transform>().position = counterItem.transform.position;
+                counterItem.GetComponent<Transform>().position = counterItem.ReturnToStartPosition;
+                counterItem.dragHandler.transform.SetParent(counterItem.dragHandler.startParent);
 
                 counterItem.inCounter = false;
             }

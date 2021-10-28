@@ -15,20 +15,19 @@ namespace GSS.Inventory
 		public static GameObject Item;
 		
      	public  bool      canDrag = true;
-          private Vector3   startPosition;
-          private Transform startParent;
+          public Vector3   startPosition;
+          public Transform startParent;
 
           private void Start()
           {
 	          startPosition = transform.position;
+	          startParent   = transform.parent;
           }
 
           public void OnBeginDrag(PointerEventData eventData)
-     	{
-     		Item          = gameObject;
-               startParent   = transform.parent;
-      
-     		GetComponent<CanvasGroup>().blocksRaycasts = false;
+          {
+	          Item                                       = gameObject;
+	          GetComponent<CanvasGroup>().blocksRaycasts = false;
      		transform.SetParent(transform.root);
      		
      		var generic = eventData.pointerDrag.GetComponent<GenericItem>();

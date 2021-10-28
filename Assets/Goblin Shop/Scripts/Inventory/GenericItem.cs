@@ -38,7 +38,9 @@ namespace GSS.Inventory
         public ItemController itemController;
         public bool           inCounter = false;
 
-        private DragHandler dragHandler;
+        private Vector3 startP;
+
+        public DragHandler dragHandler;
 
         // updating the data every time we generate items
         public void LoadData()
@@ -59,6 +61,7 @@ namespace GSS.Inventory
             dragHandler = GetComponent<DragHandler>();
         }
 
-
+        public Vector3 ReturnToStartPosition => dragHandler.startPosition;
+        
     }
 }
