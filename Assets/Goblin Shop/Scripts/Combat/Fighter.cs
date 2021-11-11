@@ -1,5 +1,6 @@
 using System;
 using GSS.com;
+using GSS.Control;
 using GSS.Movement;
 using GSS.Resources;
 using TMPro;
@@ -10,18 +11,28 @@ namespace GSS.Combat
 {
     public class Fighter : MonoBehaviour
     {
+        public bool IsDead
+        {
+            get => isDead;
+            set => isDead = value;
+        }
+
         [Header("Character Settings")]
         public CharacterScriptableObject character;
 
+        
         [Header("Stats Settings")]
         [SerializeField] private TextMeshProUGUI attack;
         [SerializeField] private TextMeshProUGUI defense;
         [SerializeField] private TextMeshProUGUI health;
         [SerializeField] private TextMeshProUGUI gold;
-
-        public Health Health;
-        public Move move;
-        public Fighter target;
+        
+        [Header("Combat Settings")] 
+        public CombatManager combatManager;
+        public  Health  Health;
+        public  Move    move;
+        public  Fighter target;
+        private bool    isDead;
 
         private void OnEnable()
         {
@@ -38,13 +49,24 @@ namespace GSS.Combat
             gold.text = character.baseGold.ToString();
         }
 
-        public Fighter()
+        public void TakeDamage(int damage)
         {
-            isDead = false;
+            var healthPoints = Health.healthPoints;
+            Health.onDamage?.Invoke(); 
+            
+            healthPoints         = Mathf.Max(healthPoints - damage, 0);
+            character.baseHealth = healthPoints;
+            LoadData();
+
+
+            if (healthPoints <= 0)
+                Health.Die(this);
         }
-
-        [SerializeField] public bool isDead { get; set; }
-
-       
+        public void InStock()
+        {
+            gameObject.SetActive(false);
+            character = null;
+            Health.combatManager.deadFighters.Add(this);
+        }
     }
 }

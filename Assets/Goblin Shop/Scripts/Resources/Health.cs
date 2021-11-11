@@ -12,42 +12,22 @@ namespace GSS.Resources
     {
         public int healthPoints;
 
-        [SerializeField] private CombatManager combatManager;
-        [SerializeField] private UnityEvent onDie;
-        [SerializeField] private UnityEvent onDamage;
+        [SerializeField] public  CombatManager combatManager;
+        [SerializeField] private UnityEvent    onDie;
+        [SerializeField] public  UnityEvent    onDamage;
 
-        private bool _isDead;
+        private bool isDead;
 
-        public bool IsDead() => _isDead;
-        public void TakeDamage(int damage, Fighter deadFighter)
+        public bool IsDead() => isDead;
+
+        public void Die(Fighter fighter)
         {
-            onDamage?.Invoke(); 
-            healthPoints = Mathf.Max(healthPoints - damage, 0);
-            deadFighter.character.baseHealth = healthPoints;
-            deadFighter.LoadData();
-            
-
-            if (healthPoints <= 0)
-                Die(deadFighter);
-        }
-
-        private void Die(Fighter deadFighter)
-        {
-            if (_isDead) return;
+            if (isDead) return;
             onDie.Invoke();
-            _isDead = true;
-            deadFighter.isDead = true;
-
-            StoreDeadFighters(deadFighter);
+            isDead = true;
+            fighter.IsDead = true;
+            fighter.InStock();
         }
 
-        private void StoreDeadFighters(Fighter target)
-        {
-            target.gameObject.SetActive(false);
-            target.character = null;
-            combatManager.deadFighters.Add(target);
-        }
-
-        
     }
 }

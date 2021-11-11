@@ -56,7 +56,7 @@ namespace GSS.Control
         private Fighter FindTarget(List<Fighter> targetsFromList)
         {
             var target = targetsFromList[Random.Range(0, targetsFromList.Count)];
-            if (target.isDead)
+            if (target.IsDead)
                 target = targetsFromList[Random.Range(0, targetsFromList.Count)];
 
             return target;
@@ -64,28 +64,26 @@ namespace GSS.Control
         
         public void Attack(Fighter fighter, Fighter target)
         {
+            const int damage = 1;
             if (fighter.character.baseAttack > target.character.baseDefense)
-                fighter.Health.TakeDamage(1, target);
+                target.TakeDamage(damage);
 
             else if(fighter.character.baseAttack < target.character.baseDefense) 
-                fighter.Health.TakeDamage(1, fighter);
+                fighter.TakeDamage(damage);
         }
         
-        
 
-        int j;
+        int characterCount;
         public void CheckGameState(List<Fighter> fighters)
         {
-           
-            
-            j++;
-            if (j >= fighters.Count )
+            characterCount++;
+            if (characterCount >= fighters.Count )
             {
                 RemoveDeadFighter();
                 if(!canChangeState) return;;
                 
                 fighterIndex = 0;
-                j = 0;
+                characterCount = 0;
 
                 if (gameState == GameState.DayCombat)
                 {

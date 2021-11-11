@@ -15,10 +15,10 @@ MonoBehaviour:
   characterName: Archer
   attack: 3
   defense: 2
-  health: 3
-  baseAttack: 4
-  baseDefense: 2
-  baseHealth: 3
+  health: 1
+  baseAttack: 3
+  baseDefense: 5
+  baseHealth: 1
   equipableItems:
   - {fileID: 11400000, guid: 4d6afb7790306d74cb3de62d9b7d520b, type: 2}
   - {fileID: 11400000, guid: 2accb12a4fb03a74ca7aa94036a82e45, type: 2}
@@ -26,8 +26,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2a091dced429d05429e5f1e128054c19, type: 2}
   - {fileID: 11400000, guid: 3a106ad201a02c04bbab032be5c3ed5c, type: 2}
   gold: 2000
-  baseGold: 1900
-  target: {fileID: 11400000, guid: 2f7403a8ee454df47ac59e3fc7ad44c1, type: 2}
+  baseGold: 1700
+  target: {fileID: 11400000, guid: 8718878e7a78abd478d3929b3a4179fa, type: 2}
   sprite: {fileID: 21300000, guid: da20cf75073080840b30fe45c1007e7b, type: 3}
   dialog1: 
   dialog2: 
