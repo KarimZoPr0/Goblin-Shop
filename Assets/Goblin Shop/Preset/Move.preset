@@ -58,6 +58,14 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: duration.Array.size
-    value: 0
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: duration.Array.data[0]
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: duration.Array.data[1]
+    value: 0.35
     objectReference: {fileID: 0}
   m_ExcludedProperties: []
