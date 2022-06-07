@@ -4,14 +4,13 @@ using UnityEngine.EventSystems;
 
 namespace GSS.Inventory {
 	public class Slot : MonoBehaviour, IDropHandler {
-		private GameObject Item => transform.childCount > 0 ? transform.GetChild(0).gameObject : null;
+		private GameObject Itemm => transform.childCount > 0 ? transform.GetChild(0).gameObject : null;
 
 		public void OnDrop(PointerEventData eventData) {
-			if (Item) return;
+			if (Itemm) return;
 			var droppedItem = eventData.pointerDrag.GetComponent<GenericItem>();
 			var dragHandler = eventData.pointerDrag.GetComponent<DragHandler>();
-
-
+			
 			if (!dragHandler.canDrag) return;
 			DragHandler.Item.transform.SetParent(transform);
 

@@ -3,13 +3,11 @@ using UnityEngine;
 
 public class UIButton : MonoBehaviour {
 	public void MouseOn() {
-		transform.DOScale(new Vector3(1.1f, 1.1f, 1), 0.5f);
-		print("mouse on");
+		transform.DOScale(new Vector3(2.7f, 2.7f, 2.7f), 0.5f);
 	}
 
 	public void MouseOff() {
-		transform.DOScale(new Vector3(1f, 1f, 1), 0.5f);
-		print("mouse off");
+		transform.DOScale(new Vector3(2.5f, 2.5f, 2.5f), 0.5f);
 	}
 
 	public void MouseOnBig() {

@@ -2,25 +2,22 @@ using System.Collections;
 using GSS.Combat;
 using GSS.Control;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace GSS.Core {
 	public abstract class Action : MonoBehaviour {
 		public CombatManager combatManager;
 
-
-		// these object will appear depending on the day
-		public GameObject dayShop;
-		public GameObject nightShop;
+		
+	
 		public GameObject combatBoard;
 		public GameObject defaultCharacter;
+
+
+		public UnityEvent shoppingEvent;
 		public abstract void Shopping();
-
-
-		// this is for character to start fighting
 		public abstract void Combat();
-
-
-		// We set objects to be active or not in order to start combat
+		
 		public IEnumerator CombatTransition() {
 			ReferenceUI.transitor.Fade();
 			defaultCharacter.SetActive(false);
@@ -31,7 +28,6 @@ namespace GSS.Core {
 		}
 
 
-		// We set objects to be active or not in order to start shopping
 		public IEnumerator ShoppingTransition() {
 			ReferenceUI.transitor.Fade();
 			yield return new WaitForSeconds(0.5f);

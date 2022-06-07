@@ -17,10 +17,5 @@ public class SceneInitializer : MonoBehaviour {
 	private void Start() {
 		var ui = Instantiate(playerUIPrefab, transform.position, Quaternion.identity).GetComponent<PlayerUI>();
 		ReferenceUI.ui = ui;
-		//
-		// if (AudioManager.instance == null)
-		// {
-		//     Instantiate(audioManagerPrefab, transform.position, Quaternion.identity);
-		// }
 	}
 }

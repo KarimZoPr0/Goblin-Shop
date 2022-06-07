@@ -5,28 +5,14 @@ using UnityEngine.SceneManagement;
 public class SceneTransitor : MonoBehaviour {
 	public static bool restart;
 	private       int  targetScene;
-
-	/*
-	string music;
-	int NightShoppingID = 5;
-	int NightCombatID = 5;
-	int DayShoppingID = 4;
-	int DayCombatID = 4;
-	*/
-
+	
 	private void Start() {
 		ReferenceUI.transitor = this;
 	}
 
-	public bool LoadScene(int sceneNum) {
-		if (sceneNum == 0 && restart) return true;
-		restart     = true;
+	public void LoadScene(int sceneNum) {
 		targetScene = sceneNum;
 		StartCoroutine(Transition());
-
-		if (sceneNum == 0) return false;
-
-		return true;
 	}
 
 	public void LoadDay() {
@@ -47,9 +33,9 @@ public class SceneTransitor : MonoBehaviour {
 		StartCoroutine(Transition());
 	}
 
-	private IEnumerator Transition() {
+	public IEnumerator Transition() {
 		ReferenceUI.ui.LoadScreen("Right");
-		yield return new WaitForSecondsRealtime(0.45f);
+		yield return new WaitForSecondsRealtime(0.55f);
 		SceneManager.LoadScene(targetScene);
 		Time.timeScale = 1;
 	}

@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -108,8 +109,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75f1755c8ff6f67459ce22424fc1b456, type: 2}
-  m_sharedMaterial: {fileID: 7603272085914968850, guid: 75f1755c8ff6f67459ce22424fc1b456,
-    type: 2}
+  m_sharedMaterial: {fileID: 7603272085914968850, guid: 75f1755c8ff6f67459ce22424fc1b456, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -242,8 +243,7 @@ MonoBehaviour:
   m_text: 99
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75f1755c8ff6f67459ce22424fc1b456, type: 2}
-  m_sharedMaterial: {fileID: 7603272085914968850, guid: 75f1755c8ff6f67459ce22424fc1b456,
-    type: 2}
+  m_sharedMaterial: {fileID: 7603272085914968850, guid: 75f1755c8ff6f67459ce22424fc1b456, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -369,6 +369,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -376,8 +377,7 @@ MonoBehaviour:
   m_text: 99
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75f1755c8ff6f67459ce22424fc1b456, type: 2}
-  m_sharedMaterial: {fileID: 7603272085914968850, guid: 75f1755c8ff6f67459ce22424fc1b456,
-    type: 2}
+  m_sharedMaterial: {fileID: 7603272085914968850, guid: 75f1755c8ff6f67459ce22424fc1b456, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -509,6 +509,7 @@ MonoBehaviour:
   health: {fileID: 2873206087389332482}
   gold: {fileID: 2873206087368116823}
   Health: {fileID: 2873206087962902115}
+  target: {fileID: 0}
   move: {fileID: 2873206087962902116}
 --- !u!114 &2873206087962902116
 MonoBehaviour:
@@ -545,10 +546,35 @@ MonoBehaviour:
   combatManager: {fileID: 0}
   onDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2873206087962902115}
+        m_TargetAssemblyTypeName: GSS.Resources.Health, Game
+        m_MethodName: OnDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDamage:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2873206087962902115}
+        m_TargetAssemblyTypeName: GSS.Resources.Health, Game
+        m_MethodName: OnHit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  image: {fileID: 2873206088238288585}
 --- !u!1 &2873206088047297605
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,6 +635,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -634,6 +661,7 @@ GameObject:
   - component: {fileID: 2873206088238288598}
   - component: {fileID: 2873206088238288584}
   - component: {fileID: 2873206088238288585}
+  - component: {fileID: 6592996245613362762}
   m_Layer: 5
   m_Name: CardBody
   m_TagString: Untagged
@@ -685,6 +713,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -699,6 +728,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6592996245613362762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2873206088238288599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderTypes: 0
+  normalStrenght: 5
+  normalSmoothing: 1
+  computingNormal: 0
 --- !u!1 &2873206088403550412
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,6 +804,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -766,8 +812,7 @@ MonoBehaviour:
   m_text: 99
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75f1755c8ff6f67459ce22424fc1b456, type: 2}
-  m_sharedMaterial: {fileID: 7603272085914968850, guid: 75f1755c8ff6f67459ce22424fc1b456,
-    type: 2}
+  m_sharedMaterial: {fileID: 7603272085914968850, guid: 75f1755c8ff6f67459ce22424fc1b456, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

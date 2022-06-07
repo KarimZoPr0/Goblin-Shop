@@ -1,3 +1,4 @@
+using GSS.com;
 using GSS.Combat;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -54,6 +55,7 @@ namespace GSS.Inventory {
 			var item      = eventData.pointerEnter.GetComponent<GenericItem>().item;
 			var character = CharacterGenerator.Instance.GetSelected();
 
+			if (character == null) return;
 			canDrag = character.CanEquip(item);
 
 			var crossHair = canDrag ? "Selected" : "Illegal";

@@ -14,7 +14,7 @@ namespace GSS.Movement {
 
 		[SerializeField] private float[] duration;
 
-		public void MoveToTarget(Fighter fighter, Fighter target, List<Fighter> attackers) {
+		public void StartMovement(Fighter fighter, Fighter target) {
 			var seq = DOTween.Sequence();
 
 			seq
@@ -24,7 +24,7 @@ namespace GSS.Movement {
 					.OnStepComplete(() => combatManager.Attack(fighter, target)))
 				.Append(transform.DOMove(transform.position, duration[1]))
 				.Append(transform.DOScale(scales[1], .5f))
-				.OnComplete(() => combatManager.CheckGameState(attackers));
+				.OnComplete(() => combatManager.CheckGameState());
 		}
 	}
 }

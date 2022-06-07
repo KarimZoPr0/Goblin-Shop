@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using GSS.com;
 using GSS.Movement;
 using GSS.Resources;
@@ -21,6 +23,10 @@ namespace GSS.Combat {
 		public Fighter target;
 		public Move    move;
 
+
+		public int GetBaseAttack => character.baseAttack;
+		public int GetBaseDefense => character.defense;
+		
 		public bool IsDead { get; set; }
 
 		private void OnEnable() {
@@ -41,9 +47,15 @@ namespace GSS.Combat {
 			character = null;
 			Health.combatManager.deadFighters.Add(this);
 
-			foreach (var patron in Health.combatManager.patrons)
-				if (patron.name == name)
-					patron.gameObject.SetActive(false);
+			foreach (var patron in Health.combatManager.patrons.Where(patron => patron.name == this.name))
+				patron.gameObject.SetActive(false);
 		}
+
+
+		public void MoveToTarget()
+		{
+			move.StartMovement(this, target);
+		}
+		
 	}
 }

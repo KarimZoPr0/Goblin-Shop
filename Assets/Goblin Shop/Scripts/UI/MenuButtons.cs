@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class MenuButtons : MonoBehaviour {
-	public int menuScene;
-	public int levelsScene = 1;
-	public int aboutScene  = 2;
+public class MenuButtons : MonoBehaviour
+{
+	public int menuScene = 0;
+	public int levelsScene = 2;
+	public int aboutScene  = 1;
 
 	public void LoadMenu() {
 		ReferenceUI.transitor.LoadScene(menuScene);
@@ -19,6 +20,9 @@ public class MenuButtons : MonoBehaviour {
 	}
 
 	public void Quit() {
+#if UNITY_EDITOR
+		UnityEditor.EditorApplication.isPlaying = false;
+#endif
 		Application.Quit();
 	}
 }

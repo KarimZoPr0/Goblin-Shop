@@ -3,12 +3,11 @@ guid: ebef5a7a9f14fac4781ec96e17f3e6ed
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 16
-  forceTextureCase: -2
+  fontSize: 100
+  forceTextureCase: -1
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Charlemagne Std
   fontNames:
   - Charlemagne Std
   fallbackFontReferences: []

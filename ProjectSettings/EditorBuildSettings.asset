@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Goblin Shop/Scene/GoblinShop.unity
-    guid: d154c54509535514a839663fccc67b23
   - enabled: 1
     path: Assets/Goblin Shop/Scene/MenuScene.unity
     guid: 335c1fbdc935cb445ab48ee99f4cc4db
+  - enabled: 1
+    path: Assets/Goblin Shop/Scene/AboutScene.unity
+    guid: d465483931d731140ba369407aac986c
+  - enabled: 1
+    path: Assets/Goblin Shop/Scene/MainScene.unity
+    guid: 3346067196a95774d9578a663d232b1a
   m_configObjects: {}

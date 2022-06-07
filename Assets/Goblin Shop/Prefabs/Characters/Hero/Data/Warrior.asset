@@ -26,7 +26,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2a091dced429d05429e5f1e128054c19, type: 2}
   gold: 2000
   baseGold: 2000
-  target: {fileID: 11400000, guid: 2f7403a8ee454df47ac59e3fc7ad44c1, type: 2}
+  target: {fileID: 11400000, guid: 8718878e7a78abd478d3929b3a4179fa, type: 2}
   sprite: {fileID: 21300000, guid: 29ae1e0da24496942a84c5ac10511c28, type: 3}
   dialog1: I shall vanquish that vile Troll!
   dialog2: That Kobold shall taste my steal!

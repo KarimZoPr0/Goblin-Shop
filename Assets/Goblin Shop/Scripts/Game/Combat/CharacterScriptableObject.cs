@@ -55,12 +55,10 @@ namespace GSS.com {
 				"Kobold" => dialog2,
 				"Wizard" => dialog3,
 				"Dragon" => dialog3,
-				_ => ""
+				_ => "Dialogue not foudn"
 			};
 		}
 
-		public bool CanEquip(Item item) {
-			return item != null && equipableItems.Contains(item);
-		}
+		public bool CanEquip(Item item) => item != null && equipableItems.Contains(item);
 	}
 }
