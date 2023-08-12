@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.karimzopro.taskhub": "file:C:/Users/Karim/OneDrive/Documents/Unity Packages/TaskHub",
     "com.singularitygroup.hotreload": "git+https://gitlab.hotreload.net/root/hot-reload-releases.git#1.7.1",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.collab-proxy": "1.15.15",

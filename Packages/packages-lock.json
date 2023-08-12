@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "com.karimzopro.taskhub": {
-      "version": "file:C:/Users/Karim/OneDrive/Documents/Unity Packages/TaskHub",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {}
-    },
     "com.singularitygroup.hotreload": {
       "version": "git+https://gitlab.hotreload.net/root/hot-reload-releases.git#1.7.1",
       "depth": 0,
