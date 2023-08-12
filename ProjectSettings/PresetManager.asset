@@ -6,13 +6,10 @@ PresetManager:
   serializedVersion: 2
   m_DefaultPresets:
   - first:
-      m_NativeTypeID: 114
-      m_ManagedTypePPtr: {fileID: 11500000, guid: 54897f3cd354a5d4b912738123faa87e, type: 3}
+      m_NativeTypeID: 1006
+      m_ManagedTypePPtr: {fileID: 0}
       m_ManagedTypeFallback: 
     second:
-    - m_Preset: {fileID: 2655988077585873504, guid: 5cf9e1e25d7b6984b8a8f60dfd99982d, type: 2}
-      m_Filter: 
-      m_Disabled: 0
-    - m_Preset: {fileID: 2655988077585873504, guid: 5cf9e1e25d7b6984b8a8f60dfd99982d, type: 2}
-      m_Filter: 
+    - m_Preset: {fileID: 2655988077585873504, guid: f09d56a30a1d8e449a5e0264d451fd83, type: 2}
+      m_Filter: UI
       m_Disabled: 0
