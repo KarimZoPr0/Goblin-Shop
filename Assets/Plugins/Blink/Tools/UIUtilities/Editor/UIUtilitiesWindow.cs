@@ -211,7 +211,7 @@ namespace BLINK.UIUtilities
         {
             GUILayout.Space(15);
             EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Action:", GUILayout.ExpandWidth(false), GUILayout.MaxWidth(75));
+            EditorGUILayout.LabelField("DayNightManager:", GUILayout.ExpandWidth(false), GUILayout.MaxWidth(75));
             _currentToolCategory = (ToolCategory) EditorGUILayout.EnumPopup(_currentToolCategory, GUILayout.ExpandWidth(true));
             EditorGUILayout.EndHorizontal();
 
